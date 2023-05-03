@@ -20,27 +20,27 @@ steps to start code:-
 - cd pathplanning/src/a_star_pathplanning            --(go to package)--
 - mkdir scripts
 - cd scripts
-- Paste a_star.py file in this directory
+4- Paste a_star.py file in this directory.
 - sudo chmod +x a_star.py
-- cd                      --(return to home)--
-- echo "source ~/pathpanning/devel/setup.bash" >> ~/.bashrc          --(so you don't need to source every time you open a new terminal)--
+- cd                   --(return to home)--
+- echo "source ~/pathpanning/devel/setup.bash" >> ~/.bashrc      --(so you don't need to source every time you open a new terminal)--
 
 then you are ready to run the file.
 
-4- run roscore in a new terminal.
+5- run roscore in a new terminal.
 
-5- open coppeliaSim using the following commands:
+6- open coppeliaSim using the following commands:
 
 - cd CoppeliaSim_Edu_V4_3_0_Ubuntu20_04/
 - ./coppeliaSim.sh
 
 CoppeliaSim should open.
 
-6- Then open the following scene A_star_simulation_map.ttt
+7- Then open the following scene A_star_simulation_map.ttt
 
-7- Run the simulation first.
+8- Run the simulation first.
 
-8- Then open a new terminal and run the following command:
+9- Then open a new terminal and run the following command:
 
 - rosrun a_star_pathplanning a_star 
 
