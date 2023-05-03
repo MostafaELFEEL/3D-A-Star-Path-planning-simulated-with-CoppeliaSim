@@ -44,7 +44,7 @@ CoppeliaSim should open.
 
 9- Then open a new terminal and run the following command:
 
-- rosrun a_star_pathplanning a_star 
+- rosrun a_star_pathplanning a_star.py
 
 
 results:-
