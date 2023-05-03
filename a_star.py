@@ -151,10 +151,12 @@ def Draw(Map):    #Draws a Map
         Draw_Vertical(Map,[0,0,draw_counter],[x-1,0,draw_counter])      #Draws front boundary   
         Draw_Vertical(Map,[0,y-1,draw_counter],[x-1,y-1,draw_counter])  #Draws back boundary
 
-        Draw_Horizontal(Map,[n*2,0,draw_counter],[n*2,y-3,draw_counter]) ####trial boundaries
-        Draw_Horizontal(Map,[n*4,2,draw_counter],[n*4,y-1,draw_counter]) ####trial boundaries
-        Draw_Horizontal(Map,[n*6,0,draw_counter],[n*6,y-3,draw_counter]) ####trial boundaries
-        Draw_Horizontal(Map,[n*8,2,draw_counter],[n*8,y-1,draw_counter]) ####trial boundaries
+	
+	#### you can change or remove these 4 bounderies. they represent the inner 4 walls which shapes the maze.       <----------------
+        Draw_Horizontal(Map,[n*2,0,draw_counter],[n*2,y-3,draw_counter]) #### boundaries 1       <----------------
+        Draw_Horizontal(Map,[n*4,2,draw_counter],[n*4,y-1,draw_counter]) #### boundaries 2       <----------------
+        Draw_Horizontal(Map,[n*6,0,draw_counter],[n*6,y-3,draw_counter]) #### boundaries 3       <----------------
+        Draw_Horizontal(Map,[n*8,2,draw_counter],[n*8,y-1,draw_counter]) #### boundaries 4       <----------------
         draw_counter=draw_counter+1
 #######################################################################################
 #### 8. Main function
@@ -174,8 +176,8 @@ if __name__ == '__main__':     # Main function that is executed
     Draw(Map)  #draw map
 
     # define start and end also you can change them to try different paths
-    start=node_class([1,1,1],0,0,0,None,2)  #position,g,h,f,parent,value
-    goal=node_class([(n*9)-1,(n*9)-1,z-1],0,0,0,None,3)  #position,g,h,f,parent,value
+    start=node_class([1,1,1],0,0,0,None,2)  #position,g,h,f,parent,value        <----------------
+    goal=node_class([(n*9)-1,(n*9)-1,z-1],0,0,0,None,3)  #position,g,h,f,parent,value        <----------------
 
     Map[start.position[0],start.position[1],start.position[2]]=start.type
     Map[goal.position[0],goal.position[1],goal.position[2]]=goal.type
