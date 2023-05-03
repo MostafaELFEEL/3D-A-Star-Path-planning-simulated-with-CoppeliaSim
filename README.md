@@ -12,18 +12,18 @@ steps to start code:-
 - mkdir -p ~/pathplanning/src
 - cd ~/pathplanning
 - catkin_init_workspace
-- cd pathplanning/src        --(go to src)--
+- cd pathplanning/src               --(go to src)--
 - catkin_create_pkg a_star_pathplanning std_msgs rospy
-- cd pathplanning            --(return to workspace)--
+- cd pathplanning                   --(return to workspace)--
 - catkin build a_star_pathplanning
 - source devel/setup.bash
-- cd pathplanning/src/a_star_pathplanning    --(go to package)--
+- cd pathplanning/src/a_star_pathplanning            --(go to package)--
 - mkdir scripts
 - cd scripts
 - Paste a_star.py file in this directory
 - sudo chmod +x a_star.py
-- cd               --(return to home)--
-- echo "source ~/pathpanning/devel/setup.bash" >> ~/.bashrc   --(so you don't need to source every time you open a new terminal)--
+- cd                      --(return to home)--
+- echo "source ~/pathpanning/devel/setup.bash" >> ~/.bashrc          --(so you don't need to source every time you open a new terminal)--
 
 then you are ready to run the file.
 
