@@ -20,6 +20,7 @@ steps to start code:-
 - cd pathplanning/src/a_star_pathplanning            --(go to package)--
 - mkdir scripts
 - cd scripts
+
 4- Paste a_star.py file in this directory.
 - sudo chmod +x a_star.py
 - cd                   --(return to home)--
