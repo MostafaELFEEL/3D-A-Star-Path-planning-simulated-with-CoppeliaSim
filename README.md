@@ -40,7 +40,7 @@ CoppeliaSim should open.
 
 7- Then open the following scene A_star_simulation_map.ttt
 
-8- Run the simulation first.
+8- Run the scene first on CoppeliaSim.
 
 9- Then open a new terminal and run the following command:
 
