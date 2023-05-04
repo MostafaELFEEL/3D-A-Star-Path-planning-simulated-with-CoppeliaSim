@@ -47,6 +47,18 @@ CoppeliaSim should open.
 - rosrun a_star_pathplanning a_star.py
 
 
+##How the Code Works?
+
+The code works by creating 3D array map to draw walkable and non-walkable areas (ex: map[x,y,z]=0 or 1). 
+
+After drawing the map we choose two random points as start and end points.
+
+This is the flowchart of the algorithm.
+![image](https://user-images.githubusercontent.com/106331831/236201740-8626b4d5-e1f8-4ea8-aebe-7ddca2a3137e.png)
+
+
+
+
 results:-
 
 
