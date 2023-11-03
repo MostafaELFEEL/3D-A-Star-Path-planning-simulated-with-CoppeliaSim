@@ -1,4 +1,4 @@
-# 3D-A-Star-Path-planning
+# 3D-A* Path planning
 A* path planning algorithm simulated using ROS and CoppeliaSim.
 
 steps to start code:-
