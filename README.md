@@ -1,67 +1,88 @@
-# 3D-A* Path planning
-A* path planning algorithm simulated using ROS and CoppeliaSim.
+# 3D A* Path Planning
 
-steps to start code:-
+This repository contains a 3D A* path planning algorithm that is simulated using ROS and CoppeliaSim.
 
-1- You must have ROS and CoppeliaSim installed on Ubuntu first. 
+## Table of Contents
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+- [How the Code Works](#how-the-code-works)
+- [Results](#results)
 
-2- Install all needed libraries(numpy, math)
+## Prerequisites
 
-3- Open terminal and paste the following:
+Before you can run this code, make sure you have the following installed on your Ubuntu system:
 
-- mkdir -p ~/pathplanning/src
-- cd ~/pathplanning
-- catkin_init_workspace
-- cd pathplanning/src            --(go to src)--
-- catkin_create_pkg a_star_pathplanning std_msgs rospy
-- cd pathplanning            --(return to workspace)--
-- catkin build a_star_pathplanning
-- source devel/setup.bash
-- cd pathplanning/src/a_star_pathplanning            --(go to package)--
-- mkdir scripts
-- cd scripts
+1. [ROS (Robot Operating System)](http://wiki.ros.org/ROS/Installation)
+2. [CoppeliaSim](https://www.coppeliarobotics.com/previousVersions) - Download the appropriate version for your system.
+3. Python libraries: `numpy`, `math`
 
-4- Paste a_star.py file in scripts directory then run this command while in this directory.
-- sudo chmod +x a_star.py
+## Getting Started
 
-5- Open a new terminal 
-- echo "source ~/pathpanning/devel/setup.bash" >> ~/.bashrc            --(so you don't need to source every time you open a new terminal)--
+Follow these steps to set up and run the code:
 
-then you are ready to run the file.
+1. Clone this repository and navigate to your workspace:
 
-5- run roscore in a new terminal.
+    ```bash
+    mkdir -p ~/pathplanning/src
+    cd ~/pathplanning
+    catkin_init_workspace
+    cd pathplanning/src
+    catkin_create_pkg a_star_pathplanning std_msgs rospy
+    cd pathplanning
+    catkin build a_star_pathplanning
+    source devel/setup.bash
+    cd pathplanning/src/a_star_pathplanning
+    mkdir scripts
+    cd scripts
+    ```
 
-6- open coppeliaSim using the following commands:
+2. Paste the `a_star.py` file in the `scripts` directory and make it executable:
 
-- cd CoppeliaSim_Edu_V4_3_0_Ubuntu20_04/
-- ./coppeliaSim.sh
+    ```bash
+    sudo chmod +x a_star.py
+    ```
 
-CoppeliaSim should open.
+3. Open a new terminal and add the following line to your `~/.bashrc` to avoid sourcing the workspace every time:
 
-7- Then open the following scene A_star_simulation_map.ttt
+    ```bash
+    echo "source ~/pathplanning/devel/setup.bash" >> ~/.bashrc
+    ```
 
-8- Run the scene first on CoppeliaSim.
+4. Start a ROS core in a new terminal:
 
-9- Then open a new terminal and run the following command:
+    ```bash
+    roscore
+    ```
 
-- rosrun a_star_pathplanning a_star.py
+5. Open CoppeliaSim using the following commands:
 
+    ```bash
+    cd CoppeliaSim_Edu_V4_3_0_Ubuntu20_04/
+    ./coppeliaSim.sh
+    ```
 
-## How the Code Works?
+    CoppeliaSim should open.
 
-The code works by creating 3D array map to draw walkable and non-walkable areas (ex: map[x,y,z]=0 or 1). 
-After drawing the map we choose two random points as start and end points.
-This is the flowchart of the algorithm.
-![image](https://user-images.githubusercontent.com/106331831/236201740-8626b4d5-e1f8-4ea8-aebe-7ddca2a3137e.png)
+6. Load the scene `A_star_simulation_map.ttt` in CoppeliaSim.
 
+7. Run the scene in CoppeliaSim.
 
+8. Open a new terminal and run the following command to execute the Python script:
 
-results:-
+    ```bash
+    rosrun a_star_pathplanning a_star.py
+    ```
 
+## How the Code Works
 
+The code works by creating a 3D array map to represent walkable and non-walkable areas (e.g., `map[x, y, z] = 0` or `1`). After defining the map, two random points are chosen as start and end points. The algorithm follows this flowchart:
 
+![Algorithm Flowchart](https://user-images.githubusercontent.com/106331831/236201740-8626b4d5-e1f8-4ea8-aebe-7ddca2a3137e.png)
 
-![image](https://user-images.githubusercontent.com/106331831/236013382-e2b344d6-5023-44ce-8e22-e5fd6a714716.png)
+## Results
 
-![image](https://user-images.githubusercontent.com/106331831/236013215-c7be6e03-0e10-4e57-bfb5-853b973effb7.png)
+Here are some visual results of the path planning algorithm:
 
+![Result 1](https://user-images.githubusercontent.com/106331831/236013382-e2b344d6-5023-44ce-8e22-e5fd6a714716.png)
+
+![Result 2](https://user-images.githubusercontent.com/106331831/236013215-c7be6e03-0e10-4e57-bfb5-853b973effb7.png)
